@@ -1,0 +1,221 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    background-color: #fff;
+    width: 40%;
+    min-height: 60vh;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #777;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-in-out;
+}
+
+input, textarea, button {
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+button {
+    background-color: #5a67d8;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #434190;
+}
+
+button:active {
+    transform: translateY(2px);
+}
+
+/* Task Styles */
+.task-container {
+    max-height: 40vh;
+    overflow-y: auto;
+    animation: fadeInUp 0.7s ease-in-out;
+}
+
+.task {
+    background-color: #e2e8f0;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+
+.task p {
+    margin: 0;
+    font-weight: 600;
+    color: #333;
+}
+
+.task span {
+    color: #555;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.deletebtn {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.deletebtn:hover {
+    background-color: #c53030;
+}
+
+.deletebtn:active {
+    transform: translateY(2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar */
+.task-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.task-container::-webkit-scrollbar-thumb {
+    background-color: #5a67d8;
+    border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and larger devices */
+@media (max-width: 768px) {
+    .container {
+        width: 60%;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.95rem;
+    }
+
+    .task {
+        padding: 12px;
+    }
+}
+
+/* For smartphones */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form input, form textarea, form button {
+        font-size: 0.85rem;
+    }
+
+    .task {
+        padding: 10px;
+    }
+
+    .deletebtn {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}
